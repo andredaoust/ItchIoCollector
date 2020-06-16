@@ -75,7 +75,7 @@ namespace ItchIoCollector
             }
 
             //Close the browser
-            Console.WriteLine("All done!")
+            Console.WriteLine("All done!");
             driver.Close();
         }
     }
