@@ -14,9 +14,9 @@ namespace ItchIoCollector
         static void Main(string[] args)
         {
 
-            const string username = "USERNAME";
-            const string password = "PASSWORD";
-            const string uniqueId = "UNIQUE_ID";
+            const string username = "andre@daoust.org";
+            const string password = "forever";
+            const string uniqueId = "jUjtVPGDBHeKHktSdtLAjgjy2iPqHLxkx3PsjuWj";
             const int resumeFromPage = 1;
 
 
@@ -44,8 +44,6 @@ namespace ItchIoCollector
             var pageCount = pageElement.Text.Substring(pageElement.Text.LastIndexOf('f') + 2);
 
             var pages = Int32.Parse(pageCount);
-            Console.WriteLine(pages);
-            //var gamesPerPage = driver.FindElements(By.ClassName("game_download_btn"));
 
             for (var pageIndex = 1; pageIndex <= pages+1; pageIndex++)
             {
@@ -64,7 +62,6 @@ namespace ItchIoCollector
                 
                 for (var index = 0; index <= count; index++)
                 {
-                    Console.WriteLine(driver.Title);
                     driver.FindElements(By.ClassName("button"))[index].Click();
                     wait.Until(d => d.FindElement(By.ClassName("footer")));
                     driver.Navigate().Back();
@@ -78,6 +75,7 @@ namespace ItchIoCollector
             }
 
             //Close the browser
+            Console.WriteLine("All done!")
             driver.Close();
         }
     }
